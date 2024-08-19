@@ -88,7 +88,7 @@ router.post('/pessoas/:estudanteId/matriculas', (req, res) => matriculaControlle
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/MatheusRFilho/Aprendendo-sqlite-e-sequelime
    ```
 
 2. Navegue até o diretório do projeto:
