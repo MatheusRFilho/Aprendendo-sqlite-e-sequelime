@@ -1,80 +1,86 @@
 
-# Curso: ORM com Node.js - Desenvolvendo uma API com Sequelize e SQLite
+# Curso: ORM com Node.js - Desenvolvendo uma API com Sequelize e SQLite e Curso: ORM com Node.js: avançando nas funcionalidades do Sequelize
 
-Este repositório contém os códigos desenvolvidos durante o curso **ORM com Node.js: desenvolvendo uma API com Sequelize e SQLite**, realizado na plataforma Alura. O objetivo do curso foi construir uma API do zero utilizando o ORM Sequelize para conectar e gerenciar o banco de dados SQLite, seguindo boas práticas de desenvolvimento back-end.
+Este repositório contém os códigos desenvolvidos durante os cursos realizados na plataforma Alura sobre ORM com Node.js e Sequelize. O objetivo é construir e aprimorar uma API utilizando o Sequelize para gerenciar o banco de dados SQLite, seguindo boas práticas de desenvolvimento back-end.
 
 ## Plataforma
 
 - **Alura**
 
-## Tópicos Abordados
+## Cursos
+
+### 1. ORM com Node.js: desenvolvendo uma API com Sequelize e SQLite
 
 Neste curso, foram explorados os seguintes conceitos:
 
-### Introdução ao ORM e Sequelize
+#### Introdução ao ORM e Sequelize
 
-- O que são ORMs e os motivos pelos quais são utilizados no desenvolvimento back-end.
-- Diferenças entre utilizar SQL diretamente em um código JavaScript e utilizar métodos de um ORM para fazer a mesma tarefa.
-- Como utilizar o `sequelize-cli`, ferramenta de linha de comando do Sequelize, para gerar a base de um projeto como ponto de partida.
-- Instalação e configuração do Sequelize através dos arquivos próprios de configuração.
-- Uso do Sequelize para conectar a API a uma base de dados.
+- O que são ORMs e por que são utilizados no desenvolvimento back-end.
+- Diferenças entre utilizar SQL diretamente em um código JavaScript e usar métodos de um ORM.
+- Uso do `sequelize-cli` para gerar a base do projeto.
+- Configuração do Sequelize e conexão com a base de dados.
 
-### Modelos e Mapeamento de Dados
+#### Modelos e Mapeamento de Dados
 
-- O que são modelos e como eles representam e mapeiam dados de tabelas no banco de dados.
-- Automação da criação de modelos com o `sequelize-cli`.
-- Tipos de dados em SQL e como o Sequelize adapta esses tipos para diferentes bancos de dados.
-- Conceito de migrações em ORMs e como utilizá-las para fazer mudanças rastreáveis e incrementais no banco de dados.
-- Uso de seeds para popular o banco com dados de teste através do `sequelize-cli`.
+- Criação e automação de modelos com o `sequelize-cli`.
+- Tipos de dados SQL e adaptação pelo Sequelize.
+- Migrações para mudanças rastreáveis no banco de dados.
+- Uso de seeds para popular o banco com dados de teste.
 
-### Padrão MVC e Organização do Projeto
+#### Padrão MVC e Organização do Projeto
 
-- O que é o padrão de arquitetura MVC (Model-View-Controller) e a função de cada uma das suas camadas.
-- Implementação de controllers para gerenciar requisições HTTP e organizar rotas em arquivos separados.
-- Função da camada de serviços (Services) e como utilizá-la para separar a lógica de negócio.
-- Como aplicar herança de classe para reaproveitar métodos entre Controllers e Services.
+- Implementação do padrão MVC (Model-View-Controller).
+- Controllers para gerenciar requisições HTTP e rotas organizadas.
+- Camada de serviços (Services) para separar a lógica de negócio.
+- Herança de classe para reaproveitar métodos entre Controllers e Services.
 
-### Associações e Relacionamentos Entre Tabelas
+#### Associações e Relacionamentos Entre Tabelas
 
-- Como utilizar métodos do Sequelize para associar modelos e criar relações entre tabelas.
-- Diferenças entre associações em migrações e associações entre modelos.
-- Padrões de relacionamento entre entidades (1:1, 1:n, n:m) e como identificar e aplicar o relacionamento adequado para cada caso.
+- Métodos do Sequelize para criar relações entre tabelas.
+- Diferenças entre associações em migrações e entre modelos.
+- Padrões de relacionamento (1:1, 1:n, n:m) e como aplicá-los.
 
-### Avançando com o Sequelize
+#### Funcionalidades Implementadas
 
-- Como usar herança de classe para adicionar Services e Controllers sem duplicar métodos de CRUD.
-- Utilização de métodos especiais criados com associações para adicionar funcionalidades avançadas à API.
+- **CRUD Completo:** Operações de Create, Read, Update e Delete em diversas entidades.
+- **Associações de Tabelas:** Relacionamento entre modelos.
+- **Migrações e Seeds:** Automação da criação de tabelas e popular o banco com dados de teste.
 
-## Estrutura do Código
+### 2. ORM com Node.js: avançando nas funcionalidades do Sequelize
 
-O código está organizado seguindo o modelo MVC, com a utilização do Sequelize para interagir com o banco de dados SQLite.
+Neste curso, foram abordados tópicos mais avançados:
 
-### Funcionalidades Implementadas
+#### Estrutura do Projeto e Soft Delete
 
-- **CRUD Completo:** Implementação das operações de Create, Read, Update e Delete em diversas entidades da aplicação.
-- **Associações de Tabelas:** Relacionamento entre modelos utilizando os padrões 1:1, 1:n e n:m.
-- **Migrações e Seeds:** Automação da criação de tabelas e população do banco de dados com dados de teste.
+- Estrutura do projeto para refletir camadas da aplicação.
+- Implementação de soft delete com Sequelize.
+- Criação de novas migrações para alterações específicas usando `queryInterface`.
 
-### Exemplos de Uso
+#### Escopos e Validações
 
-#### Listar Todos as pessoas
+- Uso de escopos de modelo para abstração de lógicas comuns em consultas.
+- Criação de escopos de associação padrão e específicos.
+- Métodos built-in de validação do Sequelize e implementação de validações refinadas.
+- Diferença entre validação e constraint.
 
+#### Refatoração e Métodos Avançados
 
-```javascript
-router.get('/pessoas', (req, res) => pessoaController.pegaTodos(req, res));
-```
+- Trabalhando com métodos “mixin” gerados a partir das associações.
+- Criação de escopos de associação diversos.
+- Utilização de `findOne` para buscar registros por qualquer coluna.
+- Refatoração do código para finders genéricos e funções auxiliares.
 
-#### Criar uma Nova Pessoa
+#### Operadores e Consultas Diretas
 
-```javascript
-router.post('/pessoas', (req, res) => pessoaController.criaNovo(req, res));
-```
+- Uso de operadores de comparação.
+- Utilização de query params.
+- Métodos avançados como `findAndCountAll`.
+- Execução de consultas SQL diretamente com Sequelize.
 
-#### Associar matriculas a uma pessoa
+#### Transações
 
-```javascript
-router.post('/pessoas/:estudanteId/matriculas', (req, res) => matriculaController.criaNovo(req, res));
-```
+- Garantia da integridade das operações com transações.
+- Implementação de transações gerenciadas com Sequelize.
 
 ## Tecnologias Utilizadas
 
@@ -103,16 +109,14 @@ router.post('/pessoas/:estudanteId/matriculas', (req, res) => matriculaControlle
    npm install
    ```
 
-4. Crie um arquivo chamada database.sqlite na raiz do projeto.
-
-5. Execute as migrações e seeds:
+4. Execute as migrações e seeds:
 
    ```bash
    npx sequelize-cli db:migrate
    npx sequelize-cli db:seed:all
    ```
 
-6. Execute o código:
+5. Execute o código:
 
    ```bash
    npm start
